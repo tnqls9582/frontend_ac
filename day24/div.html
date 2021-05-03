@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div {
+            background-color: red;
+        } */
+        /* id를 이용하여 css를 적용하는 방법 : #붙이기 */
+        /* 똑같은 id를 두개 이상의 태그에 적용하지 않음, id하나당 태그 하나 */
+        #id1 {
+            background-color: yellow;
+        }
+        #id2 {
+            background-color: tomato;
+        }
+        #id3 {
+            background-color: yellowgreen;
+        }
+        #id4 {
+            color: blue;
+        }
+        /* 여러 요소에 같은 효과 등을 지정하고자 할 때 */
+        /* 클래스는 여러 요소(태그)에 저장할 수 있음 */
+        /* 여러 클래스를 동시에 지정할 수 있음 */
+        .class1 {
+            background-color: cornflowerblue;
+        }
+        .class2 {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- div 태그 : 영역을 나누고자 할 때 사용
+        보통 div 태그에 id 또는 class를 부여하여 활용함
+        블록 요소(Block Element) : 줄이 바뀜
+        인라인 요소(Inline Element) : 줄이 바뀌지 않음 -->
+    <div id="id1">
+        div1
+        이 문장을 작성하면서 <span id="id3">인라인 요소를</span> <div>사용하고
+        인라인 요소에 id 적용</div>
+    </div>
+    <!-- 'id2 id4' 라는 이름의 id라고 적용됨(id 두개 적용 불가) -->
+    <div id="id2 id4">
+        div2
+    </div>
+    <div class="class1">
+        div3
+    </div>
+    <!-- class1 class2 적용 -->
+    <div class="class1 class2">
+        div4
+    </div>
+    <div>
+        <h2 class="class1 class2">다른 div에 있는 h2</h2>
+    </div>
+</body>
+</html>

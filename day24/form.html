@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form 태그 -->
+    <form>
+        <!-- name 속성값에 입력한 데이터가 담겨서 서버로 전달
+            입력창에 날씨라고 입력하면 'name1=날씨' 형태로 백엔드에 전달 -->
+        ID <input type="text" id="id1" name="name1" placeholder="아이디를 입력하세요"> <br>
+        <!-- br : 줄바꿈 태그 -->
+
+        <!-- label : '비밀번호' 부분 클릭하면 해당 입력창에 커서 활성화 -->
+        <label for="id2">비밀번호 </label><input type="text" id="id2" name="name2"> <br>
+
+        지역
+        <select name="city">
+            <option value="incheon">인천</option>
+            <option value="seoul">서울</option>
+            <option value="jeju">제주</option>
+        </select> <br>
+
+        이메일
+        <input type="text" name="emailid">@
+        <!-- 네이버를 선택한다면 option 태그의 value 속성값이 담겨서 백엔드로 domain=naver.com 전달됨 -->
+        <select name="domain">
+            <option selected>선택</option>
+            <option value="naver.com">네이버</option>
+            <option value="hanmail.net">다음</option>
+            <option value="gmail.com">지메일</option> <!-- selected : 기본으로 보이게 설정-->
+        </select> <br>
+
+        자기소개 <textarea name="intro" rows="10" cols="15"></textarea> <br>
+
+        비밀번호 <input type="password" name="password"> <br>
+
+        성별 <input type="radio" id="male" name="gender" value="male">
+            <label for="male">남</label>
+            <input type="radio" name="gender" value="female">여 <br> <!-- radio 사용 시 name값이 같아야함 -->
+
+        사용경험 프로그래밍 언어
+        <input type="checkbox" name="lang" value="java">자바
+        <input type="checkbox" name="lang" value="oracle">오라클
+        <input type="checkbox" name="lang" value="html">html   
+        <input type="checkbox" name="lang" value="javascript">자바스크립트 <br>
+
+        생일
+        <input type="date" name="birth"> <br>
+
+        수량
+        <input type="number" name="quan" min="1" max="10" step="2"> <!-- step : 2씩 증가 -->
+    </form>
+
+    <!-- 폼태그에서 작성한 값을 전송 -->
+    <!-- action 속성 : form태그에서 작성한 값을 전송할 목적지
+        보통은 백엔드에서 지정한 주소값을 사용함 -->
+    <!-- method 속성 : 백엔드로 데이터를 전송하는 방법(get/post)
+        get : 보내는 데이터가 주소에 노출됨
+        post : 주소에 노출되지 않음 -->
+    <form action="join" method="POST">
+        아이디 : <input type="text" name="id"><br>
+        비밀번호 : <input type="password" name="password"><br>
+        <!-- submit : form 태그에 작성한 내용을 전부 action 속성값으로 전달 -->
+        <input type="submit" value="가입">
+    </form>
+    
+    <!-- method 속성 get으로 했을 때 -->
+    <!-- 아이디 비밀번호에 aa 입력 후 가입 누르면 주소 -->
+    join?id=aa&password=aa <!-- action의 join, ?뒤에 데이터 들어옴, 아이디와 비밀번호의 name값 = 입력값 -->
+
+    <!-- method 속성 post로 했을 때 -->
+    join <!-- 목적지 주소값만 보임 (action 속성값만) -->
+</body>
+</html>
