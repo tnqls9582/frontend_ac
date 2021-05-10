@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function multi() {
+            var table = "<table>";
+            for(var i=2; i<=9; i++) {
+                table += "<tr>";
+                table += "<td>"+i+"단</td>";
+                    for(var j=1; j<= 9; j++) {
+                        table += "<td>"+i*j+"</td>";
+                    }
+                    table += "</tr>";
+            }
+            table += "</table>";
+            document.getElementById('result').innerHTML = table;
+        }
+    </script>
+    <style>
+        table, tr, td {
+            border: 2px solid gray;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 5px;
+        }
+        tr:nth-child(even) {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="multi()">구구단 출력</button>
+    <div id="result"></div>
+</body>
+</html>

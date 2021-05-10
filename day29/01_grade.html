@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test1() {
+            var ele =document.getElementById('score').value;
+            // 콘솔로 찍으면 의미없음
+            // 변수로 값 지정해서 화면에 출력되게!
+            var grade;
+            if(ele>=90) {
+                grade='A';
+            } else if(ele>=80) {
+                grade='B';
+            } else if(ele>=70) {
+                grade='C';
+            } else if(ele>=60) {
+                grade='D';
+            } else {
+                grade='F';
+            }
+            // 성적 input 부분에 값 입력되게
+            document.getElementById('grade').value = grade;
+            // p태그 '성적' 부분에 값 입력되게
+            document.getElementById('result').innerHTML = grade;
+        }
+    </script>
+</head>
+<body>
+    점수 <input type="number" id="score"><br>
+    성적 <input type="text" id="grade"><br>
+    <button onclick="test1()">성적은?</button>
+    <p id="result">성적</p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test1() {
+            var ele = document.getElementById('select').value;
+            document.getElementById('domain').value = ele;
+        }
+    </script>
+</head>
+<body>
+    이메일 <input type="text" id="username">
+    @
+    <input type="text" id="domain">
+    <select id="select" onchange="test1()">
+        <option value="naver.com">naver.com</option>
+        <option value="daum.net">daum.net</option>
+        <option value="gmail.com">gmai.com</option>
+    </select>
+</body>
+</html>

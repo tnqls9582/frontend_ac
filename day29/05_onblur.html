@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test1() {
+            console.log('test1 함수 종료');
+            // alert('입력칸을 벗어났습니다.');
+            var ele = document.getElementById('id1');
+            // toUpperCase : 입력받은 값을 대문자로 변경
+            // ele.value = ele.value.toUpperCase();
+            var result = document.getElementById('result');
+            // 글자를 쓰지 않았을 때 경고문 실행
+            if(ele.value.length==0) {
+                result.style.color = 'red';
+                result.innerHTML = '필수입력항목입니다.'
+            // 글자수 경고!
+            } else if(ele.value.length<8 || ele.value.length>16) {
+                result.style.color = 'green';
+                result.innerHTML = '8-16자 이내로 써주세요.'
+            }
+            // 이렇게 써도 됨
+            // var ele = document.getElementById('id1').value;
+            // if(ele.length==0) ...
+        }
+    </script>
+</head>
+<body>
+    <!-- onblur : 요소를 벗어나는 순간 이벤트 발생 -->
+    입력1 <input type="text" id="id1" onblur="test1()"><br>
+    <span id="result"></span><br>
+    입력2 <input type="text" id="id2">
+</body>
+</html>

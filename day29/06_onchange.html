@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test1() {
+            console.log('test1 함수 호출');
+            var ele = document.getElementById('id1');
+            console.log(ele.value);
+            document.getElementById('id2').innerHTML = ele.value;
+        }
+    </script>
+</head>
+<body>
+    <select id="id1" onchange="test1()">
+        <option value="red">빨강</option>
+        <option value="yellow">노랑</option>
+        <option value="green">초록</option>
+        <option value="blue">파랑</option>
+    </select>
+    <h2 id="id2"></h2>
+</body>
+</html>
