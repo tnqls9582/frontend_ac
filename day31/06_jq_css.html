@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#bt1").click(function() {
+                // id1 요소에 class 추가
+                $("#id1").addClass("class1");
+            });
+            $("#bt2").click(function() {
+                $("#id1").addClass("class2");
+            });
+            $("#bt3").click(function() {
+                $("#id1").removeClass("class1");
+            });
+        });
+    </script>
+    <style>
+        .class1 {
+            color: teal;
+        }
+        .class2 {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <p id="id1">p태그 내용</p>
+    <button id="bt1">class1 추가</button>
+    <button id="bt2">class2 추가</button>
+    <button id="bt3">class 요소 제거</button>
+</body>
+</html>

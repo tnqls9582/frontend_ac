@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+    <!-- js파일 import -->
+    <script src="../js/joinform.js"></script>
+
+    <!-- css파일 import -->
+    <link rel="stylesheet" href="../css/joinform.css">
+    
+</head>
+<body>
+    <!-- ** 은 필수항목 -->
+    <!-- ** 아이디 : 6-10자리, 소문자, 숫자포함 / onblur 사용 -->
+    아이디 <input type="text" id="id" onblur="idcheck()"><br>
+    <span id="idcheck"></span><br>
+    <!-- ** 비밀번호 : 8-16자리, 대.소문자, 특수문자, 숫자포함 / onblur 사용 -->
+    비밀번호 <input type="text" id="pw" onblur="pwcheck()"><br>
+    <span id="pwcheck"></span><br>
+    <!-- 비밀번호 확인 -->
+    비밀번호 확인 <input type="text" id="check" onblur="pwresult()"><br>
+    <span id="pwresult"></span><br>
+    <!-- ** 이름 -->
+    이름 <input type="text" id="name" onblur="namecheck()"><br>
+    <span id="namecheck"></span><br>
+    <!-- 이메일 : 도메인 직접 입력 / 네이버,지메일,한메일 중 선택 -->
+    이메일 <input type="text">@<input type="text" id="email">
+    <select id="selectemail" onchange="email()">
+        <option value="naver.com">naver.com</option>
+        <option value="gmail.com">gmail.com</option>
+        <option value="hanmail.net">hanmail.net</option>
+    </select><br>
+    <!-- ** 전화번호 : 세자리-네자리-네자리 숫자형식 onblur 사용 -->
+    전화번호 <input type="text" id="phone" onblur="phonecheck()"><br>
+    <span id="phonecheck"></span><br>
+    <!-- 집주소 : 다음주소 api 사용 -->
+    주소 <input type="text" id="sample4_postcode" placeholder="우편번호">
+    <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+    <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+    <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+    <span id="guide" style="color:#999;display:none"></span>
+    <input type="text" id="sample4_detailAddress" placeholder="상세주소">
+    <input type="text" id="sample4_extraAddress" placeholder="참고항목">
+    
+    
+    
+</body>
+</html>
